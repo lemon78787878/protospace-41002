@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     else
       @prototype = @comment.prototype
       @comments = @prototype.comments.includes(:user)
-      render "prototypes/show"
+      render "prototypes/show", status: :unprocessable_entity
     end
   end
 
